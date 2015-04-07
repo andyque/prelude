@@ -10,10 +10,7 @@
                             evil-exchange
                             evil-anzu
                             evil-iedit-state
-                            hydra
                             ))
-
-
 
 ;;key mapping for turn on iimage mode
 (define-key evil-normal-state-map (kbd ",ii") 'turn-on-iimage-mode)
@@ -209,136 +206,6 @@
 (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
 
 
-(defhydra helm-key-bindings(:color teal)
-  "
- Helm:
-_o_: swoop
-_i_menu:
-_d_wim:
-_r_tags:
-_s_ymbol:
-_f_unction:
-_p_aste kill ring:
-"
-  ("o" helm-swoop nil)
-  ("i" helm-imenu nil)
-  ("d" helm-gtags-dwim nil)
-  ("r" helm-gtags-find-rtag nil)
-  ("s" helm-gtags-find-symbol nil)
-  ("f" helm-find-files nil)
-  ("p" helm-show-kill-ring nil)
-  ("q" nil nil  :color blue))
-
-(defhydra magit-key-bindings(:color teal)
-  "
- Magit:
-_s_tatus w
-_l_og:
-_b_lame:
-"
-  ("s" magit-status nil)
-  ("l" magit-file-log nil)
-  ("b" magit-blame-mode nil)
-  ("q" nil nil :color blue)
-  )
-
-(defhydra hydra-git-gutter
-    (:pre (git-gutter-mode 1))
-  "
-Git:
-_j_: next hunk        _s_tage hunk     _q_uit
-_k_: previous hunk    _r_evert hunk    _Q_uit and deactivate git-gutter
-                      _p_opup hunk
-
-set start _R_evision
-"
-  ("j" git-gutter:next-hunk          nil)
-  ("k" git-gutter:previous-hunk      nil)
-  ("s" git-gutter:stage-hunk         nil)
-  ("r" git-gutter:revert-hunk        nil)
-  ("p" git-gutter:popup-hunk         nil)
-  ("R" git-gutter:set-start-revision nil)
-  ("q" nil                  nil :color blue)
-  ("Q" (git-gutter-mode -1) nil :color blue))
-
-(defhydra hydra-projectile-other-window (:color teal)
-  "projectile-other-window"
-  ("f"  projectile-find-file-other-window        "file")
-  ("g"  projectile-find-file-dwim-other-window   "file dwim")
-  ("d"  projectile-find-dir-other-window         "dir")
-  ("b"  projectile-switch-to-buffer-other-window "buffer")
-  ("q"  nil                                      "cancel" :color blue))
-
-(defhydra hydra-projectile (:color teal)
-  "
-     PROJECTILE: %(projectile-project-root)
-
-     Find File            Search/Tags          Buffers                Cache
-------------------------------------------------------------------------------------------
-_f_: file            _a_: ag                _i_: helm buffer list           _c_: cache clear
-_r_: recent file     _g_: update gtags      _b_: switch to buffer  _x_: remove known project
-_d_: dir             _o_: multi-occur     _s-k_: Kill all buffers  _X_: cleanup non-existing
-                     ^^^^_y_: copy filename            _z_: cache current
-
-"
-  ("a"   helm-ag                      nil)
-  ("b"   projectile-switch-to-buffer        nil)
-  ("c"   projectile-invalidate-cache        nil)
-  ("d"   projectile-find-dir                nil)
-  ("f"   helm-browse-project               nil) ;;http://stackoverflow.com/questions/14313851/emacs-opening-any-file-in-a-large-repo
-  ;; ("ff"  projectile-find-file-dwim          nil)
-  ("g"   ggtags-update-tags                 nil)
-  ;; ("s-g" ggtags-update-tags                 nil)
-  ("i"   helm-buffers-list                 nil)
-  ;; ("I"   ibuffer                 nil)
-  ("K"   projectile-kill-buffers            nil)
-  ("s-k" projectile-kill-buffers            nil)
-  ("y"   prelude-copy-file-name-to-clipboard             nil)
-  ("o"   projectile-multi-occur             nil)
-  ("s-p" projectile-switch-project          "switch project")
-  ("p"   projectile-switch-project          nil)
-  ("s"   projectile-switch-project          nil)
-  ("r"   projectile-recentf                 nil)
-  ("x"   projectile-remove-known-project    nil)
-  ("X"   projectile-cleanup-known-projects  nil)
-  ("z"   projectile-cache-current-file      nil)
-  ("`"   hydra-projectile-other-window/body "other window")
-  ("q"   nil                                "cancel" :color blue))
-
-
-
-
-
-(defhydra c++-compile-run-key-bindings (:color teal)
-  "
- C++-mode:
-_b_uild
-"
-  ("b" zilongshanren/compile nil)
-  ("r" zilongshanren/run nil)
-  ("q" nil nil :color blue)
-  )
-
-(defhydra org-key-bindings (:color teal)
-  "
- Org-mode:
-_a_genda:
-_l_ink:
-_c_apture:
-_t_odo:
-_T_ags:
-_h_tml presentation:
-
-"
-  ("a" org-agenda nil)
-  ("l" org-mac-grab-link nil)
-  ("L" jcs-get-link)
-  ("c" org-capture nil)
-  ("t" org-todo nil)
-  ("T" org-set-tags-command nil)
-  ("h" org-reveal-export-to-html-and-browse nil)
-  ("q" nil nil :color blue)
-  )
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; evil-leader config
 
@@ -361,18 +228,12 @@ _h_tml presentation:
   "ai" 'org-pomodoro
   "ao" 'org-clock-out
   "q" 'org-clock-goto
-  "p" 'hydra-projectile/body
   "v" 'evil-visual-block
   "ce" 'expand-member-functions
   "f" 'ff-find-other-file
   "zf" 'evil-toggle-fold
   ",w" 'evil-ace-jump-word-mode
   ",l" 'evil-ace-jump-line-mode
-  "e"  'hydra-error/body
-  "g"  'hydra-git-gutter/body
-  "o"  'org-key-bindings/body
-  "h"  'helm-key-bindings/body
-  "m"  'magit-key-bindings/body
   "xi" 'imenu
   "!" 'shell-command
   "=" 'prelude-indent-defun
@@ -387,7 +248,6 @@ _h_tml presentation:
 
 (evil-leader/set-key-for-mode 'cmake-mode "?" 'cmake-help)
 (evil-leader/set-key-for-mode 'ag-mode "e" 'wgrep-change-to-wgrep-mode)
-(evil-leader/set-key-for-mode 'c++-mode "b" 'c++-compile-run-key-bindings/body)
 
 ;; The following settings must be fore (requre 'evil)
 ;; (setq evil-want-C-u-scroll t)

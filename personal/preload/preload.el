@@ -1,5 +1,6 @@
 ;;load 3rd party elisps
 (add-to-list 'load-path "~/.emacs.d/site-slip/eim")
+(add-to-list 'load-path "~/.emacs.d/personal")
 
 (require 'cl-lib)
 
@@ -188,7 +189,7 @@ Symbols needs to be a list of variables or functions available globally."
        (let ,(mapcar (lambda (sym) (list sym (symbol-value sym))) vars)
          ,@(mapcar (lambda (sym) `(fset ',sym ,(symbol-function sym))) funcs)
          ,@body))))
-  
+
 
 (require 'vc)
 

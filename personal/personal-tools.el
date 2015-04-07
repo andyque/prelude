@@ -1,4 +1,7 @@
-;; Support for the http://kapeli.com/dash documentation browser
+;;; package --- tool for interactive with external programs and web service
+;;; Commentary:
+;;; Github repo:https://github.com/abo-abo/hydra
+;;; Code:
 (prelude-require-packages '(weibo
                             youdao-dictionary
                             helm-github-stars
@@ -7,6 +10,7 @@
                             sx
                             ))
 
+;; Support for the http://kapeli.com/dash documentation browser
 (defun sanityinc/dash-installed-p ()
   "Return t if Dash is installed on this machine, or nil otherwise."
   (let ((lsregister "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"))
@@ -48,23 +52,6 @@
 (setq helm-github-stars-username "andyque")
 (setq helm-github-stars-cache-file "~/.emacs.d/savefile/hgs-cache")
 
-
-;;define hydra for tools
-(defhydra hydra-tools (:color red)
-  "
- Youdao: _y_
- Dash: _d_
-  Weibo: _w_
-"
-  ("y" youdao-dictionary-search-at-point nil :exit t)
-  ("d" dash-at-point nil :exit t)
-  ("w" weibo-timeline nil :exit t)
-  ("q"  nil "quit"))
-
-;; (evil-leader/set-key "t" 'hydra-tools/body)
-(global-set-key (kbd "C-c w") 'weibo-timeline)
-
-
 (defun hotspots ()
   "helm interface to my hotspots, which includes my locations,
 org-files and bookmarks"
@@ -95,16 +82,12 @@ org-files and bookmarks"
                    helm-source-bookmarks
                    helm-source-bookmark-set)))
 
-(global-set-key (kbd "<f1>") 'hotspots)
 
 ;; enable EasyPG for encrypting
 ;; (require 'epa-file)
 ;; (epa-file-enable)
-
-;; stackoverflow settings
-(global-set-key (kbd "C-c l") 'zilongshanren/insert-chrome-current-tab-url)
-
 ;; reset client mode
+
 (use-package restclient
   :commands (restclient-mode)
   :defer t
@@ -112,4 +95,5 @@ org-files and bookmarks"
   (add-to-list 'company-backends 'company-restclient)
   )
 
-(provide 'prelude-tools)
+(provide 'personal-tools)
+;;; personal-tools ends here
