@@ -266,30 +266,34 @@ Insert an Org link at point."
   "Get the URL of the active tab of the first window"
   (interactive)
       (let ((result (do-applescript
-	  (concat
-	   "set frontmostApplication to path to frontmost application\n"
-	   "tell application \"Google Chrome\"\n"
-	   "	set theUrl to get URL of active tab of first window\n"
-	   "	set theResult to (get theUrl) \n"
-	   "end tell\n"
-	   "activate application (frontmostApplication as text)\n"
-	   "set links to {}\n"
-	   "copy theResult to the end of links\n"
-	   "return links as string\n"))))
+                     (concat
+                      "set frontmostApplication to path to frontmost application\n"
+                      "tell application \"Google Chrome\"\n"
+                      "	set theUrl to get URL of active tab of first window\n"
+                      "	set theResult to (get theUrl) \n"
+                      "end tell\n"
+                      "activate application (frontmostApplication as text)\n"
+                      "set links to {}\n"
+                      "copy theResult to the end of links\n"
+                      "return links as string\n"))))
         (insert result)))
 
 (defun zilongshanren/retrieve-chrome-current-tab-url()
   "Get the URL of the active tab of the first window"
   (interactive)
       (let ((result (do-applescript
-	  (concat
-	   "set frontmostApplication to path to frontmost application\n"
-	   "tell application \"Google Chrome\"\n"
-	   "	set theUrl to get URL of active tab of first window\n"
-	   "	set theResult to (get theUrl) \n"
-	   "end tell\n"
-	   "activate application (frontmostApplication as text)\n"
-	   "set links to {}\n"
-	   "copy theResult to the end of links\n"
-	   "return links as string\n"))))
+                     (concat
+                      "set frontmostApplication to path to frontmost application\n"
+                      "tell application \"Google Chrome\"\n"
+                      "	set theUrl to get URL of active tab of first window\n"
+                      "	set theResult to (get theUrl) \n"
+                      "end tell\n"
+                      "activate application (frontmostApplication as text)\n"
+                      "set links to {}\n"
+                      "copy theResult to the end of links\n"
+                      "return links as string\n"))))
         (format "%s" result)))
+
+(defun zilongshanren/org-archive-done-tasks ()
+  (interactive)
+  (org-map-entries 'org-archive-subtree "/DONE" 'file))
