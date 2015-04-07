@@ -7,7 +7,8 @@
 
 ;; you can also use "M-x ispell-word" or hotkey "M-$". It pop up a multiple choice
 ;; @see http://frequal.com/Perspectives/EmacsTip03-FlyspellAutoCorrectWord.html
-(global-unset-key (kbd "C-c s"))
+;; (global-unset-key (kbd "C-c s"))
+(define-key prelude-mode-map (kbd "C-c s") nil)
 (global-set-key (kbd "C-c s") 'flyspell-auto-correct-word)
 
 (provide 'prelude-flyspell)
