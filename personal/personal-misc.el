@@ -16,6 +16,7 @@
 
 
 ;;; configs for ace-jump mode
+(require 'ace-jump-mode)
 (setq ace-jump-mode-scope 'window)
 (global-set-key (kbd "C-c SPC") 'ace-jump-word-mode)
 
