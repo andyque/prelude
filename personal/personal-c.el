@@ -6,6 +6,7 @@
                             stickyfunc-enhance
                             company-irony
                             helm-gtags
+                            cmake-font-lock
                             ;; srefactor
                             ))
 
@@ -124,8 +125,9 @@
                      (setq new-buffer-name (concat "cmake-" parent-dir))
                      (rename-buffer new-buffer-name t)))
 
-                 (autoload 'andersl-cmake-font-lock-activate "andersl-cmake-font-lock" nil t)
-                 (add-hook 'cmake-mode-hook 'andersl-cmake-font-lock-activate)
+                 ;; (autoload 'andersl-cmake-font-lock-activate "andersl-cmake-font-lock" nil t)
+                 (require 'cmake-font-lock)
+                 (add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
                  (add-hook 'cmake-mode-hook (function cmake-rename-buffer))
                  )
                ))
