@@ -1,0 +1,7 @@
+CEDET switched to Git as of Dec 29th 2014.
+
+This Bazaar repository won't be updated anymore.
+
+Please get the development version by doing
+
+git clone http://git.code.sf.net/p/cedet/git cedet
