@@ -166,8 +166,8 @@
              (progn
               (eval-after-load 'flycheck
                 '(add-to-list 'flycheck-checkers 'irony))
-               (gtags-mode t)
-               (diminish 'gtags-mode)
+               ;; (gtags-mode t)
+               ;; (diminish 'gtags-mode)
                (local-set-key (kbd "C-.") 'company-c-headers)
                (local-set-key (kbd "C-M-k") 'irony-server-kill)
                )

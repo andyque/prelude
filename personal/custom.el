@@ -47,16 +47,12 @@
  '(magit-emacsclient-executable "/usr/local/bin/emacsclient")
  '(magit-use-overlays t)
  '(org-agenda-custom-commands nil)
- '(org-agenda-files
-   (quote
-    ("~/org-notes/gtd.org" "~/org-notes/emacs.org" "~/org-notes/cocos2d-x.org" "~/org-notes/notes.org" "~/org-notes/learning.org" "~/org-notes/vim.org")))
  '(org-agenda-ndays 2)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-deadline-prewarning-if-scheduled t)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-start-on-weekday nil)
- '(org-archive-location "%s_archive::")
  '(org-deadline-warning-days 14)
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)

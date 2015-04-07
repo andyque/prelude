@@ -4,6 +4,7 @@
                             ox-reveal
                             ))
 
+(add-to-list 'org-modules "org-habit")
 (require 'org-mac-link)
 
 (setq org-agenda-inhibit-startup t) ;; ~50x speedup
@@ -62,7 +63,6 @@
 (require 'org-compat)
 (require 'org)
 (require 'org-install)
-(add-to-list 'org-modules "org-habit")
 ;; {{ export org-mode in Chinese into PDF
 ;; @see http://freizl.github.io/posts/tech/2012-04-06-export-orgmode-file-in-Chinese.html
 ;; and you need install texlive-xetex on different platforms
@@ -88,7 +88,7 @@
 (setq org-clock-out-remove-zero-time-clocks t)
 
 ;;set my person org files seperated and stored in a paticular place
-(setq org-agenda-files (list "~/org-notes/gtd.org"))
+;; (setq org-agenda-files (list "~/org-notes/gtd.org"))
 
 ;; config for org-mode html5 presentation
 ;;require org 8.0+
