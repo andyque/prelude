@@ -1,0 +1,6 @@
+[submodule "yasnippet-snippets"]
+	path = yasnippet-snippets
+	url = git@github.com:andyque/yasnippet-snippets.git
+[submodule "reveal-js"]
+	path = reveal-js
+	url = https://github.com/hakimel/reveal.js.git
