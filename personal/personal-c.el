@@ -2,7 +2,10 @@
                             irony
                             flycheck-irony
                             rtags
+                            ggtags
                             stickyfunc-enhance
+                            company-irony
+                            helm-gtags
                             ;; srefactor
                             ))
 

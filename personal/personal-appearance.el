@@ -2,7 +2,10 @@
                             relative-line-numbers
                             powerline
                             powerline-evil
-                            use-package))
+                            use-package
+                            ws-butler
+                            popwin
+                            ))
 
 ;; config emacs theme
 ;; salorized color theme would make org-mode very slow
@@ -113,20 +116,28 @@
   '(diminish 'abbrev-mode))
 (eval-after-load "magit"
   '(diminish 'magit-auto-revert-mode))
-
 (diminish 'prelude-mode)
+(eval-after-load "guru-mode"
+  '(diminish 'guru-mode))
+(diminish 'whitespace-mode)
+(eval-after-load "ws-butler"
+  '(diminish 'ws-butler-mode))
+(eval-after-load "doxymacs"
+  '(diminish 'doxymacs-mode))
+(diminish 'company-mode)
+(eval-after-load "flyspell"
+  '(diminish 'flyspell-mode))
 
 ;; Get ride of special buffers
 (use-package popwin)
 (popwin-mode 1)
 
 ;; get ride of trailing-whitespace on some mode
-(use-package ws-butler
-  :commands ws-butler-mode
-  :init (progn
-          (add-hook 'c-mode-common-hook 'ws-butler-mode)
-          (add-hook 'python-mode-hook 'ws-butler-mode)
-          (add-hook 'cython-mode-hook 'ws-butler-mode)))
+(require 'ws-butler)
+(add-hook 'c-mode-common-hook 'ws-butler-mode)
+(add-hook 'python-mode-hook 'ws-butler-mode)
+(add-hook 'cython-mode-hook 'ws-butler-mode)
+
 
 
 (provide 'prelude-appearance)

@@ -41,7 +41,6 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-ag-use-grep-ignore-list t)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
- '(irony-server-source-dir "/Users/guanghui/.emacs.d/elpa/irony-20150227.1526/server")
  '(linum-delay t)
  '(lua-indent-level 4)
  '(magit-diff-use-overlays nil)
@@ -68,9 +67,7 @@
     (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" "mac-build")))
  '(relative-line-numbers-delay 0.1)
  '(send-mail-function (quote smtpmail-send-it))
- '(yas-snippet-dirs
-   (quote
-    ("~/.emacs.d/yasnippet-snippets/" yas-installed-snippets-dir "/Users/guanghui/.emacs.d/elpa/elpy-1.7.0/snippets/")) nil (yasnippet)))
+ )
 
 (provide 'custom)
 (custom-set-faces

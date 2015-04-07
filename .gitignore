@@ -20,3 +20,5 @@ session*
 tramp
 /var/pcache
 /.sx/
+/irony/
+/.python-environments/
