@@ -3,6 +3,8 @@
                             youdao-dictionary
                             helm-github-stars
                             elfeed
+                            restclient
+                            sx
                             ))
 
 (defun sanityinc/dash-installed-p ()
