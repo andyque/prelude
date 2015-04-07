@@ -2,10 +2,8 @@
                             irony
                             flycheck-irony
                             rtags
-                            ggtags
                             stickyfunc-enhance
                             company-irony
-                            helm-gtags
                             cmake-font-lock
                             ;; srefactor
                             ))
@@ -45,6 +43,7 @@
                          ("\\.h"   (".c"".cpp"))))
 
                  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+                 (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
                  (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
                  (add-hook 'c-mode-common-hook 'yas-minor-mode)
                  (add-hook 'c-mode-common-hook 'semantic-mode)
@@ -184,7 +183,7 @@
     :init
     (progn
       (add-hook 'c++-mode-hook 'irony-mode)
-      (add-hook 'c-mode-hook 'irony-mode)
+      ;; (add-hook 'c-mode-hook 'irony-mode)
       (add-hook 'objc-mode-hook 'irony-mode)
 
       ;; replace the `completion-at-point' and `complete-symbol' bindings in

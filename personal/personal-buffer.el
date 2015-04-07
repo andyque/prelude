@@ -47,4 +47,4 @@
 
 (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
 
-(provide 'prelude-ibuffer)
+(provide 'prelude-buffer)

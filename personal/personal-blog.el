@@ -1,3 +1,4 @@
+;; We should also add org2blog settings here
 (prelude-require-packages '(yaml-mode
                             org-octopress
                             ))

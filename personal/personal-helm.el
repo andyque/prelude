@@ -58,21 +58,6 @@
         (read-directory-name . ido)
         ))
 
-(setq helm-gtags-path-style 'relative)
-(setq helm-gtags-ignore-case t)
-(setq helm-gtags-auto-update t)
-
-;; {{helm-gtags
-;; customize
-(require 'diminish)
-(require 'helm-gtags)
-;; (autoload 'helm-gtags-mode "helm-gtags" nil t)
-
-(add-hook 'c++-mode-hook (lambda () (progn
-                                     (helm-gtags-mode t)
-                                     (diminish 'helm-gtags-mode)
-                                     )))
-;; }}
 
 
 (use-package helm-ls-git

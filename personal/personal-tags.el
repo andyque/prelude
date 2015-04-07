@@ -1,8 +1,11 @@
-;; package --- personal ctags configuration
-;;; Commentary:
+;; package --- personal tags configuration
+;;; Commentary: For ctags, etags, gtags etc
 ;;; Code:
 
-(prelude-require-packages '(ctags))
+(prelude-require-packages '(ctags
+                            ggtags
+                            helm-gtags
+                            ))
 
 (require 'ctags)
 ;; Don't ask before rereading the TAGS files if they have changed
@@ -23,6 +26,20 @@
 (setq-local hippie-expand-try-functions-list
             (cons 'ggtags-try-complete-tag hippie-expand-try-functions-list))
 
+;; helm-gtags
+(setq helm-gtags-path-style 'relative)
+(setq helm-gtags-ignore-case t)
+(setq helm-gtags-auto-update t)
 
-(provide 'personal-ctags)
-;;; personal-ctags.el ends here
+(require 'diminish)
+(require 'helm-gtags)
+
+
+(add-hook 'c++-mode-hook (lambda () (progn
+                                     (helm-gtags-mode t)
+                                     (diminish 'helm-gtags-mode)
+                                     )))
+;; }}
+
+(provide 'personal-tags)
+;;; personal-tags.el ends here
