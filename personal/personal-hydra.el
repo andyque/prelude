@@ -3,7 +3,9 @@
 ;;; Github repo:https://github.com/abo-abo/hydra
 ;;; Code:
 
-(prelude-require-packages '(hydra))
+(prelude-require-packages '(hydra
+                            rtags
+                            ))
 
 (require 'personal-tools)
 
@@ -254,6 +256,24 @@ _a_genda:   _l_ink:  _c_apture:  _t_odo:       _T_ags:      _h_tml presentation:
   )
 
 (evil-leader/set-key-for-mode 'c++-mode "b" 'c++-compile-run-key-bindings/body)
+
+
+;; rtags
+(require 'rtags)
+(defhydra rtags-key-bindings(:color teal)
+  "
+ Rtags:
+_s_ymbol:   _i_menu:    _f_ile:     _r_eference:    _v_isual:
+"
+  ("s" rtags-find-symbol nil)
+  ("i" rtags-imenu nil)
+  ("f" rtags-find-file nil)
+  ("r" rtags-find-references nil)
+  ("v" rtags-find-virtuals-at-point nil)
+  ("q" nil nil  :color blue))
+
+
+(evil-leader/set-key-for-mode 'c++-mode "r" 'rtags-key-bindings/body)
 
 (provide 'personal-hydra)
 ;;; personal-hydra.el ends here

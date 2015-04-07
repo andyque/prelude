@@ -64,5 +64,11 @@
 
 ;; sometimes it's very anoyying
 ;; (desktop-save-mode 1)
+;; popwin
+;; http://emacs.stackexchange.com/questions/459/how-to-automatically-kill-helm-buffers-i-dont-need
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(push '("^\*helm .+\*$" :regexp t) popwin:special-display-config)
+(push '("^\*helm-.+\*$" :regexp t) popwin:special-display-config)
 
 (provide 'prelude-window)

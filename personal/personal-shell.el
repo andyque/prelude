@@ -2,7 +2,7 @@
                             use-package
                             ))
 
-(require use-package)
+(require 'use-package)
 (use-package sh-script
   :defer t
   :config
