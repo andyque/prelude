@@ -2,6 +2,7 @@
 (prelude-require-packages '(weibo
                             youdao-dictionary
                             helm-github-stars
+                            elfeed
                             ))
 
 (defun sanityinc/dash-installed-p ()
@@ -21,7 +22,8 @@
   (when (sanityinc/dash-installed-p)
     (prelude-require-package 'dash-at-point)))
 
-(global-set-key (kbd "C-c d") 'dash-at-point)
+(define-key prelude-mode-map (kbd "C-c d") 'dash-at-point)
+;; (global-set-key (kbd "C-c d") 'dash-at-point)
 (global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
 
 ;; Enable Cache
