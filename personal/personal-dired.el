@@ -13,6 +13,7 @@
          (match-string 1))))))
 
 (define-key dired-mode-map (kbd "z") 'dired-get-size)
+(define-key dired-mode-map (kbd "C-c C-e") 'dired-toggle-read-only)
 
 ;; add `flet'
 (require 'cl)
