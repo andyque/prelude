@@ -24,10 +24,14 @@
       ;;modify the windows key to super
       (setq w32-pass-lwindow-to-system nil)
       (setq w32-lwindow-modifier 'super)
+      ;;http://www.johndcook.com/blog/emacs_windows/
       ;;delete to trash when delete files in emacs
       (setq delete-by-moving-to-trash t)
       ;;set flyspell applications location
       (setq ispell-program-name "C:/bin/Aspell/bin/aspell.exe")
+      ;;http://www.douban.com/group/topic/33000993/
+      (set-fontset-font "fontset-default"
+                        'gb18030 '("Microsoft YaHei" . "unicode-bmp"))
       )
     )
 ;;----------------------------------------------------------------------------
