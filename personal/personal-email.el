@@ -3,7 +3,7 @@
 ;;; Commentary:
 
 ;; add the source shipped with mu to load-path
-(add-to-list 'load-path (expand-file-name "/usr/local/Cellar/mu/0.9.11/share/emacs/site-lisp/mu4e"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/mu4e"))
 
 ;; make sure emacs finds applications in /usr/local/bin
 (setq exec-path (cons "/usr/local/bin" exec-path))
