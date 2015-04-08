@@ -32,6 +32,7 @@
       ;;http://www.douban.com/group/topic/33000993/
       (set-fontset-font "fontset-default"
                         'gb18030 '("Microsoft YaHei" . "unicode-bmp"))
+      ;;when loading emacs from mingw, the follow settings is not needed
       (setq exec-path (add-to-list 'exec-path "C:/Program Files (x86)/Git/bin"))
       (setenv "PATH" (concat "C:\\Program Files (x86)\\Git\\bin;" (getenv "PATH")))
       )
