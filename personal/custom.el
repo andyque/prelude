@@ -44,7 +44,6 @@
  '(linum-delay t)
  '(lua-indent-level 4)
  '(magit-diff-use-overlays nil)
- '(magit-emacsclient-executable "/usr/local/bin/emacsclient")
  '(magit-use-overlays t)
  '(org-agenda-custom-commands nil)
  '(org-agenda-ndays 2)

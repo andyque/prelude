@@ -4,7 +4,6 @@
 
 (require 'cl-lib)
 
-
 (setq *macbook-pro-support-enabled* t)
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
@@ -18,6 +17,19 @@
 (setq *emacs23* (and (not *xemacs*) (or (>= emacs-major-version 23))) )
 (setq *emacs24* (and (not *xemacs*) (or (>= emacs-major-version 24))) )
 
+(if *win32*
+    (progn
+      ;;speedup the indexing method on windows
+      (setq projectile-indexing-method 'alien)
+      ;;modify the windows key to super
+      (setq w32-pass-lwindow-to-system nil)
+      (setq w32-lwindow-modifier 'super)
+      ;;delete to trash when delete files in emacs
+      (setq delete-by-moving-to-trash t)
+      ;;set flyspell applications location
+      (setq ispell-program-name "C:/bin/Aspell/bin/aspell.exe")
+      )
+    )
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
