@@ -275,5 +275,13 @@ _s_ymbol:   _i_menu:    _f_ile:     _r_eference:    _v_isual:
 
 (evil-leader/set-key-for-mode 'c++-mode "r" 'rtags-key-bindings/body)
 
+(defhydra hydra-marked-items (dired-mode-map "")
+  "
+Number of marked items: %(length (dired-get-marked-files))
+"
+  ("m" dired-mark "mark"))
+
+(define-key dired-mode-map
+  "m" 'hydra-marked-items/dired-mark)
 (provide 'personal-hydra)
 ;;; personal-hydra.el ends here
