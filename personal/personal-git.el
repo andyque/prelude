@@ -3,6 +3,7 @@
 (prelude-require-packages '(git-gutter
                             git-messenger
                             ))
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 (setq magit-save-some-buffers nil
       magit-process-popup-time 10
