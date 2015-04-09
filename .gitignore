@@ -24,3 +24,4 @@ tramp
 /.python-environments/
 /.mc-lists.el
 /server/
+/ac-comphist.dat
