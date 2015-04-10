@@ -138,6 +138,7 @@
 (add-hook 'python-mode-hook 'ws-butler-mode)
 (add-hook 'cython-mode-hook 'ws-butler-mode)
 
-
+(setq-default fill-column 80)
+;; (fci-mode 1)
 
 (provide 'prelude-appearance)

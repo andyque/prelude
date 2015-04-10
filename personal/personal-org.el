@@ -56,7 +56,7 @@
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t))
 
-(define-key global-map "\C-cl" 'org-insert-link)
+;; (define-key global-map "\C-cl" 'org-insert-link)
 
 (setq org-mobile-directory "~/org-notes/org")
 

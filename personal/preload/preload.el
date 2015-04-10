@@ -17,6 +17,7 @@
 (setq *xemacs* (featurep 'xemacs) )
 (setq *emacs23* (and (not *xemacs*) (or (>= emacs-major-version 23))) )
 (setq *emacs24* (and (not *xemacs*) (or (>= emacs-major-version 24))) )
+(setq initial-scratch-message nil)
 
 (if *is-a-mac*
     (setq ns-pop-up-frames nil)
