@@ -12,7 +12,7 @@
  '(compilation-message-face (quote default))
  '(custom-safe-themes
    (quote
-    ("3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("0eebf69ceadbbcdd747713f2f3f839fe0d4a45bd0d4d9f46145e40878fc9b098" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(ede-project-directories (quote ("/Users/guanghui/cocos2d-x")))
  '(elpy-rpc-python-command "python3")
  '(fci-rule-color "dark red")
@@ -36,7 +36,7 @@
      ("[0-9]+\\.tex\\'" flymake-master-tex-init flymake-master-cleanup nil)
      ("\\.tex\\'" flymake-simple-tex-init nil nil)
      ("\\.idl\\'" flymake-simple-make-init nil nil))))
- '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
+ '(helm-ag-base-command "ag --nocolor --nogroup --smart-case")
  '(helm-ag-command-option "--all-text")
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-ag-use-grep-ignore-list t)
@@ -44,10 +44,12 @@
  '(linum-delay t)
  '(lua-indent-level 4)
  '(magit-diff-use-overlays nil)
- '(magit-emacsclient-executable "/usr/local/bin/emacsclient")
  '(magit-use-overlays t)
  '(org-agenda-custom-commands nil)
- '(org-agenda-ndays 2)
+ '(org-agenda-files
+   (quote
+    ("~/org-notes/gtd.org" "~/org-notes/emacs.org" "~/org-notes/cocos2d-x.org" "~/org-notes/notes.org" "~/org-notes/learning.org" "~/org-notes/vim.org" "~/org-notes/journal.org")))
+ '(org-agenda-ndays 1)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-deadline-prewarning-if-scheduled t)
@@ -56,14 +58,11 @@
  '(org-deadline-warning-days 14)
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)
- ;; '(popwin:popup-window-position (quote right))
- ;; '(popwin:popup-window-width 80)
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" "mac-build")))
  '(relative-line-numbers-delay 0.1)
- '(send-mail-function (quote smtpmail-send-it))
- )
+ '(send-mail-function (quote smtpmail-send-it)))
 
 (provide 'custom)
 (custom-set-faces

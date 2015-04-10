@@ -8,6 +8,7 @@
                             elfeed
                             restclient
                             sx
+                            helm-flyspell
                             ))
 
 (global-set-key (kbd "C-x w") 'elfeed)
@@ -149,7 +150,8 @@ org-files and bookmarks"
 ;; @see http://frequal.com/Perspectives/EmacsTip03-FlyspellAutoCorrectWord.html
 ;; (global-unset-key (kbd "C-c s"))
 (define-key prelude-mode-map (kbd "C-c s") nil)
-(global-set-key (kbd "C-c s") 'flyspell-auto-correct-word)
+(require 'helm-flyspell)
+(global-set-key (kbd "C-c s") 'helm-flyspell-correct)
 
 
 

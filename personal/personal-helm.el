@@ -1,6 +1,7 @@
 ;;; Code:
 
 (prelude-require-packages '(helm-swoop
+                            helm-ag
                             ))
 
 (require 'helm-misc)

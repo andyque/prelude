@@ -153,7 +153,6 @@
 
 ;; define c-w h,j,k,l to window movement in evil-eamcs mode
 (define-key evil-emacs-state-map (kbd "C-w h") 'evil-window-left)
-(define-key evil-emacs-state-map (kbd "W") 'magit-copy-item-as-kill)
 (define-key evil-emacs-state-map (kbd "C-w j") 'evil-window-down)
 (define-key evil-emacs-state-map (kbd "C-w k") 'evil-window-up)
 (define-key evil-emacs-state-map (kbd "C-w l") 'evil-window-right)

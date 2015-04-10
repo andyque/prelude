@@ -102,7 +102,9 @@
   (interactive)
   (find-file "~/org-notes/gtd.org"))
 
-(setq browse-url-browser-function 'browse-url-default-macosx-browser)
+(if *is-a-mac*
+    (setq browse-url-browser-function 'browse-url-default-macosx-browser)
+    )
 
 ;;config for org-capture
 (setq org-default-notes-file "~/org-notes/gtd.org")

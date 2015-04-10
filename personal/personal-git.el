@@ -3,6 +3,7 @@
 (prelude-require-packages '(git-gutter
                             git-messenger
                             ))
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 (setq magit-save-some-buffers nil
       magit-process-popup-time 10
@@ -143,5 +144,7 @@ If `F.~REV~' already exists, use it instead of checking it out again."
 
 (define-key git-messenger-map (kbd "f") 'my-vc-visit-file-revision)
 
+(require 'magit)
+(define-key magit-log-mode-map (kbd "W") 'magit-copy-item-as-kill)
 ;; }}
 (provide 'prelude-git)

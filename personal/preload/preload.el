@@ -1,9 +1,9 @@
 ;;load 3rd party elisps
 (add-to-list 'load-path "~/.emacs.d/site-slip/eim")
 (add-to-list 'load-path "~/.emacs.d/personal")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (require 'cl-lib)
-
 
 (setq *macbook-pro-support-enabled* t)
 (setq *is-a-mac* (eq system-type 'darwin))
@@ -18,6 +18,32 @@
 (setq *emacs23* (and (not *xemacs*) (or (>= emacs-major-version 23))) )
 (setq *emacs24* (and (not *xemacs*) (or (>= emacs-major-version 24))) )
 
+(if *is-a-mac*
+    (setq ns-pop-up-frames nil)
+    )
+
+(if *win32*
+    (progn
+      ;;speedup the indexing method on windows
+      (setq projectile-indexing-method 'alien)
+      ;;modify the windows key to super
+      (setq w32-pass-lwindow-to-system nil)
+      (setq w32-lwindow-modifier 'super)
+      ;;http://www.johndcook.com/blog/emacs_windows/
+      ;;delete to trash when delete files in emacs
+      (setq delete-by-moving-to-trash t)
+      ;;set flyspell applications location
+      (setq ispell-program-name "C:/bin/Aspell/bin/aspell.exe")
+      ;;http://www.douban.com/group/topic/33000993/
+      (set-fontset-font "fontset-default"
+                        'gb18030 '("Microsoft YaHei" . "unicode-bmp"))
+      ;;when loading emacs from mingw, the follow settings is not needed
+      (setq exec-path (add-to-list 'exec-path "C:/Program Files (x86)/Git/bin"))
+      (setenv "PATH" (concat "C:\\Program Files (x86)\\Git\\bin;" (getenv "PATH")))
+      ;;speedup irony mode
+      (setq w32-pipe-read-delay 0)
+      )
+    )
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------

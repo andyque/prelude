@@ -13,6 +13,7 @@
          (match-string 1))))))
 
 (define-key dired-mode-map (kbd "z") 'dired-get-size)
+(define-key dired-mode-map (kbd "C-c C-e") 'dired-toggle-read-only)
 
 ;; add `flet'
 (require 'cl)
@@ -93,14 +94,6 @@
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
 
-(defhydra hydra-marked-items (dired-mode-map "")
-  "
-Number of marked items: %(length (dired-get-marked-files))
-"
-  ("m" dired-mark "mark"))
-
-(define-key dired-mode-map
-  "m" 'hydra-marked-items/dired-mark)
 
 ;; for running long run ansi-term
 (defun named-term (name)

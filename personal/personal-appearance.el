@@ -9,9 +9,9 @@
 
 ;; config emacs theme
 ;; salorized color theme would make org-mode very slow
-(require 'zenburn-theme)
+;; (require 'zenburn-theme)
 (if window-system
-    (load-theme 'zenburn t)
+    (load-theme 'monokai t)
   (load-theme 'wombat t)
 )
 
