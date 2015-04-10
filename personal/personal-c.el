@@ -5,6 +5,7 @@
                             stickyfunc-enhance
                             company-irony
                             cmake-font-lock
+                            company-c-headers
                             ;; srefactor
                             ))
 
