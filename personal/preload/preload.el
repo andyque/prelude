@@ -1,6 +1,7 @@
 ;;load 3rd party elisps
 (add-to-list 'load-path "~/.emacs.d/site-slip/eim")
 (add-to-list 'load-path "~/.emacs.d/personal")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (require 'cl-lib)
 
