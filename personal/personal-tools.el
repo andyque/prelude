@@ -73,9 +73,6 @@
   (when (sanityinc/dash-installed-p)
     (prelude-require-package 'dash-at-point)))
 
-(define-key prelude-mode-map (kbd "C-c d") 'dash-at-point)
-;; (global-set-key (kbd "C-c d") 'dash-at-point)
-(global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
 
 ;; Enable Cache
 (setq url-automatic-caching t)

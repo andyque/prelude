@@ -36,7 +36,6 @@
                  (add-to-list 'semantic-default-submodes 'global-semantic-highlight-edits-mode)
 
                  (setq c-default-style "linux") ;; set style to "linux"
-                 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
                  (setq c-basic-offset 4)
                  (c-set-offset 'substatement-open 0)
                  (setq cc-other-file-alist
