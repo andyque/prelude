@@ -1,5 +1,6 @@
 (prelude-require-packages '(macrostep
                             aggressive-indent
+                            lispy
                             ))
 
 (require 'macrostep)
@@ -8,5 +9,7 @@
 
 ;; for aggressive-indent
 (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+
+(add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
 
 (provide 'personal-elisp)
