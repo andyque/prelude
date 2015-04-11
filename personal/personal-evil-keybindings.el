@@ -246,7 +246,7 @@
 
 
 (evil-leader/set-key-for-mode 'cmake-mode "?" 'cmake-help)
-(evil-leader/set-key-for-mode 'ag-mode "e" 'wgrep-change-to-wgrep-mode)
+;; (evil-leader/set-key-for-mode 'ag-mode "e" 'wgrep-change-to-wgrep-mode)
 
 ;; The following settings must be fore (requre 'evil)
 ;; (setq evil-want-C-u-scroll t)

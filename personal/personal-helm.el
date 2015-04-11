@@ -1,12 +1,12 @@
 ;;; Code:
 
 (prelude-require-packages '(helm-swoop
-                            helm-ag
                             ))
 
 (require 'helm-misc)
 (require 'helm-config)
 (require 'helm-swoop)
+
 (defun helm-prelude ()
   "Preconfigured `helm'."
   (interactive)
@@ -18,18 +18,16 @@
     ;; fall back to helm mini if an error occurs (usually in `projectile-project-root')
     (error (helm-mini))))
 
-;; (eval-after-load 'prelude-mode
-;;   '(progn
-;;      (define-key prelude-mode-map (kbd "C-c h") 'helm-prelude)
-;;      (easy-menu-add-item nil '("Tools" "Prelude")
-;;                          '("Navigation"
-;;                            ["Helm" helm-prelude]))))
-
+(eval-after-load 'prelude-mode
+  '(progn
+     (define-key prelude-mode-map (kbd "C-c h") 'helm-prelude)
+     (easy-menu-add-item nil '("Tools" "Prelude")
+                         '("Navigation"
+                           ["Helm" helm-prelude]))))
 (push "Press <C-c h> to navigate a project in Helm." prelude-tips)
 
 
 ;; (helm-mode 1)
-
 (setq helm-completing-read-handlers-alist
       '((describe-function . ido)
         (describe-variable . ido)
@@ -60,23 +58,9 @@
         ))
 
 
-
 (use-package helm-ls-git
   :config
   (setq helm-ls-git-show-abs-or-relative 'relative))
-
-
-;;helm-ag
-(defun projectile-helm-ag ()
-  (interactive)
-  (helm-ag (projectile-project-root)))
-(setq helm-ag-always-set-extra-option t)
-
-(custom-set-variables
- '(helm-ag-base-command "ag --nocolor --nogroup --smart-case")
- '(helm-ag-command-option "--all-text")
- '(helm-ag-insert-at-point 'symbol))
-
 
 
 (provide 'personal-helm)
