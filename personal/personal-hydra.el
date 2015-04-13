@@ -26,8 +26,8 @@
 
 (defhydra hydra-error (global-map "M-g")
   "goto-error"
-  ("h" first-error "first")
-  ("j" next-error "next")
+  ("h" flycheck-previous-error "first")
+  ("j" flycheck-next-error "next")
   ("k" previous-error "prev")
   ("v" recenter-top-bottom "recenter")
   ("q" nil "quit"))
