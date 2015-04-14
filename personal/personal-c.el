@@ -165,15 +165,23 @@
 (add-hook 'c++-mode-hook
           '(lambda ()
              (progn
-              (eval-after-load 'flycheck
-                '(add-to-list 'flycheck-checkers 'irony))
+               (eval-after-load 'flycheck
+                 '(add-to-list 'flycheck-checkers 'irony))
+               (flyspell-prog-mode)
                ;; (gtags-mode t)
                ;; (diminish 'gtags-mode)
                (local-set-key (kbd "C-.") 'company-c-headers)
                (local-set-key (kbd "C-M-k") 'irony-server-kill)
                )
-))
-
+             ))
+(require 'cc-mode)
+(font-lock-add-keywords 'c++-mode
+                        '(
+                          ("constexpr" . 'font-lock-keyword-face)
+                          ("auto" . 'font-lock-keyword-face)
+                          ("nullptr" . 'font-lock-keyword-face)
+                          ("override" . 'font-lock-keyword-face)
+                          ))
 
 
 
