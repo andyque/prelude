@@ -88,8 +88,9 @@
 (defun zilongshanren/markdown-to-html ()
   (interactive)
   (start-process "grip" "*gfm-to-html*" "grip" (buffer-file-name)
-                 "--gfm" "--export" "/tmp/grip.html"
-                 ))
+
+                 )
+  (browse-url (format  "http://localhost:5000/%s" (buffer-name))))
 
 (define-key gfm-mode-map (kbd "s-h") 'zilongshanren/markdown-to-html)
 
