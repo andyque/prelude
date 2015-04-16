@@ -9,21 +9,12 @@
 
 (require 'personal-tools)
 
-;;define hydra for tools
-(defhydra hydra-tools (:color red
-                              :idle 0.5)
-  "
- Youdao: _y_  Dash: _d_  Weibo: _w_
-"
-  ("y" youdao-dictionary-search-at-point nil :exit t)
-  ("d" dash-at-point nil :exit t)
-  ("w" weibo-timeline nil :exit t)
-  ("q"  nil "quit"))
-
-(defhydra hydra-zoom (global-map "C-M-z")
+(defhydra hydra-zoom ()
   "zoom"
   ("g" text-scale-increase "in")
-  ("l" text-scale-decrease "out"))
+  ("l" text-scale-decrease "out")
+  ("q" nil nil :color blue))
+(global-set-key (kbd "C-s-0") 'hydra-zoom/body)
 
 (defhydra hydra-error (global-map "M-g")
   "goto-error"

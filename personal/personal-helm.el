@@ -7,24 +7,24 @@
 (require 'helm-config)
 (require 'helm-swoop)
 
-(defun helm-prelude ()
-  "Preconfigured `helm'."
-  (interactive)
-  (condition-case nil
-      (if (projectile-project-root)
-          (helm-projectile)
-        ;; otherwise fallback to `helm-mini'
-        (helm-mini))
-    ;; fall back to helm mini if an error occurs (usually in `projectile-project-root')
-    (error (helm-mini))))
+;; (defun helm-prelude ()
+;;   "Preconfigured `helm'."
+;;   (interactive)
+;;   (condition-case nil
+;;       (if (projectile-project-root)
+;;           (helm-projectile)
+;;         ;; otherwise fallback to `helm-mini'
+;;         (helm-mini))
+;;     ;; fall back to helm mini if an error occurs (usually in `projectile-project-root')
+;;     (error (helm-mini))))
 
-(eval-after-load 'prelude-mode
-  '(progn
-     (define-key prelude-mode-map (kbd "C-c h") 'helm-prelude)
-     (easy-menu-add-item nil '("Tools" "Prelude")
-                         '("Navigation"
-                           ["Helm" helm-prelude]))))
-(push "Press <C-c h> to navigate a project in Helm." prelude-tips)
+;; (eval-after-load 'prelude-mode
+;;   '(progn
+;;      (define-key prelude-mode-map (kbd "C-c h") 'helm-prelude)
+;;      (easy-menu-add-item nil '("Tools" "Prelude")
+;;                          '("Navigation"
+;;                            ["Helm" helm-prelude]))))
+;; (push "Press <C-c h> to navigate a project in Helm." prelude-tips)
 
 
 ;; (helm-mode 1)
