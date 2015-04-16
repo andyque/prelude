@@ -1,4 +1,3 @@
-;; add flyspell to markdown and other mode
 (require 'company)
 
 (eval-after-load 'company

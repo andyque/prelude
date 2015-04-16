@@ -53,51 +53,53 @@
 
 ;; (setq-default show-trailing-whitespace -1)
 (setq-default indicate-empty-lines t)
-;; delete trailing-whitespace
-;; (global-linum-mode t)
+
+;;use hydra to toggle linum
+;; (global-linum-mode -1)
 ;; it's very slow when the file is very large
 ;; (global-relative-line-numbers-mode t)
 
 ;;http://stackoverflow.com/questions/3875213/ \
 ;;turning-on-linum-mode-when-in-python-c-mode
 ;;don't display linum in the following major mode
-;; (setq linum-mode-inhibit-modes-list '(eshell-mode
-;;                                       shell-mode
-;;                                       erc-mode
-;;                                       help-mode
-;;                                       text-mode
-;;                                       fundamental-mode
-;;                                       jabber-roster-mode
-;;                                       jabber-chat-mode
-;;                                       twittering-mode
-;;                                       compilation-mode
-;;                                       weibo-timeline-mode
-;;                                       woman-mode
-;;                                       Info-mode
-;;                                       calc-mode
-;;                                       calc-trail-mode
-;;                                       comint-mode
-;;                                       gnus-group-mode
-;;                                       inf-ruby-mode
-;;                                       gud-mode
-;;                                       vc-git-log-edit-mode
-;;                                       log-edit-mode
-;;                                       cmake-mode
-;;                                       term-mode
-;;                                       w3m-mode
-;;                                       speedbar-mode
-;;                                       org-agenda-mode
-;;                                       gnus-summary-mode
-;;                                       gnus-article-mode
-;;                                       magit-status-mode
-;;                                       calendar-mode))
+(setq linum-mode-inhibit-modes-list '(eshell-mode
+                                      shell-mode
+                                      erc-mode
+                                      help-mode
+                                      text-mode
+                                      fundamental-mode
+                                      jabber-roster-mode
+                                      jabber-chat-mode
+                                      twittering-mode
+                                      compilation-mode
+                                      weibo-timeline-mode
+                                      woman-mode
+                                      Info-mode
+                                      calc-mode
+                                      calc-trail-mode
+                                      comint-mode
+                                      gnus-group-mode
+                                      inf-ruby-mode
+                                      gud-mode
+                                      vc-git-log-edit-mode
+                                      log-edit-mode
+                                      cmake-mode
+                                      term-mode
+                                      w3m-mode
+                                      speedbar-mode
+                                      org-agenda-mode
+                                      gnus-summary-mode
+                                      gnus-article-mode
+                                      magit-status-mode
+                                      calendar-mode))
 
-;; (defadvice linum-on (around linum-on-inhibit-for-modes)
-;;   "Stop the load of linum-mode for some major modes."
-;;   (unless (member major-mode linum-mode-inhibit-modes-list)
-;;     ad-do-it))
+(defadvice linum-on (around linum-on-inhibit-for-modes)
+  "Stop the load of linum-mode for some major modes."
+  (unless (member major-mode linum-mode-inhibit-modes-list)
+    ad-do-it))
 
-;; (ad-activate 'linum-on)
+(ad-activate 'linum-on)
+;; (global-visual-line-mode -1)
 
 (setq ag-highlight-search t)
 

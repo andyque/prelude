@@ -10,7 +10,8 @@
 (require 'personal-tools)
 
 ;;define hydra for tools
-(defhydra hydra-tools (:color red)
+(defhydra hydra-tools (:color red
+                              :idle 0.5)
   "
  Youdao: _y_  Dash: _d_  Weibo: _w_
 "
@@ -139,18 +140,18 @@ _o_: swoop    _i_menu:       _d_wim:       _r_tags:       _s_ymbol:       _f_unc
   ("p" helm-show-kill-ring nil)
   ("q" nil nil  :color blue))
 
-(defhydra magit-key-bindings(:color teal)
+(defhydra magit-key-bindings(:color teal
+                                    :idle 1.0)
   "
  Magit:
-_s_tatus w
+_s_tatus
 _l_og:
 _b_lame:
 "
   ("s" magit-status nil)
   ("l" magit-file-log nil)
   ("b" magit-blame-mode nil)
-  ("q" nil nil :color blue)
-  )
+  ("q" nil nil :color blue))
 
 (defhydra hydra-git-gutter
     (:pre (git-gutter-mode 1))
@@ -252,7 +253,7 @@ _a_genda:   _l_ink:  _c_apture:  _t_odo:       _T_ags:      _h_tml presentation:
   "o"  'org-key-bindings/body
   "h"  'helm-key-bindings/body
   "m"  'magit-key-bindings/body
-  "t"  'hydra-tools/body
+  "t"  'org-set-tags-command
   )
 
 (evil-leader/set-key-for-mode 'c++-mode "b" 'c++-compile-run-key-bindings/body)
@@ -260,7 +261,8 @@ _a_genda:   _l_ink:  _c_apture:  _t_odo:       _T_ags:      _h_tml presentation:
 
 ;; rtags
 (require 'rtags)
-(defhydra rtags-key-bindings(:color teal)
+(defhydra rtags-key-bindings(:color teal
+                                    :idle 1.0)
   "
  Rtags:
 _s_ymbol:   _i_menu:    _f_ile:     _r_eference:    _v_isual:
@@ -283,5 +285,17 @@ Number of marked items: %(length (dired-get-marked-files))
 
 (define-key dired-mode-map
   "m" 'hydra-marked-items/dired-mark)
+
+;; define hydra for mode switching
+(defhydra hydra-mode-switch (:color amaranth
+                                    :idel 1.0)
+  "
+Switch mode:
+ "
+  ("s" flyspell-mode "flyspell")
+  ("l" linum-mode "linum")
+  ("q" nil nil :color blue))
+(global-set-key (kbd "<f2>") 'hydra-mode-switch/body)
+
 (provide 'personal-hydra)
 ;;; personal-hydra.el ends here

@@ -25,7 +25,6 @@
         "http://feeds.feedburner.com/emacsblog"
         "http://blog.binchen.org/rss.xml"
         "http://oremacs.com/atom.xml"
-        "http://www.lispcast.com/feed"
         "http://blog.gemserk.com/feed/"
         "http://www.masteringemacs.org/feed/"
         "http://t-machine.org/index.php/feed/"
@@ -36,6 +35,7 @@
         "http://blog.devtang.com/atom.xml"
         "http://emacsnyc.org/atom.xml"
         "http://puntoblogspot.blogspot.com/feeds/2507074905876002529/comments/default"
+        "http://angelic-sedition.github.io/atom.xml"
         ))
 
 (defun elfeed-mark-all-as-read ()
