@@ -112,6 +112,6 @@
 ;; async dired command
 ;; (when (require 'dired-aux)
 ;;   (require 'dired-async))
-
+(define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-alternate-file)
 (provide 'personal-dired)
 ;;; personal-dired.el ends here

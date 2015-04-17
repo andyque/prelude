@@ -5,6 +5,7 @@
 
 (prelude-require-packages '(hydra
                             rtags
+                            headlong
                             ))
 
 (require 'personal-tools)
@@ -59,42 +60,47 @@
       (shrink-window arg)
     (enlarge-window arg)))
 
-(defhydra hydra-window (:color red)
+(defhydra hydra-window (:color red
+                               :hint nil)
   "
  Split: _v_ert _x_:horz
-Delete: _o_nly  _dw_indow  _db_uffer
-  Misc: _m_ark _s_witch "
-  ("h" windmove-left nil)
-  ("j" windmove-down nil)
-  ("k" windmove-up nil)
-  ("l" windmove-right nil)
-  ("H" hydra-move-splitter-left nil)
-  ("J" hydra-move-splitter-down nil)
-  ("K" hydra-move-splitter-up nil)
-  ("L" hydra-move-splitter-right nil)
+Delete: _o_nly  _da_ce  _dw_indow  _db_uffer  _df_rame
+  Move: _s_wap
+Frames: _f_rame new  _df_ delete
+  Misc: _m_ark _a_ce  _u_ndo  _r_edo"
+  ("h" windmove-left)
+  ("j" windmove-down)
+  ("k" windmove-up)
+  ("l" windmove-right)
+  ("H" hydra-move-splitter-left)
+  ("J" hydra-move-splitter-down)
+  ("K" hydra-move-splitter-up)
+  ("L" hydra-move-splitter-right)
   ("|" (lambda ()
          (interactive)
          (split-window-right)
-         (windmove-right)) nil)
+         (windmove-right)))
   ("_" (lambda ()
          (interactive)
          (split-window-below)
-         (windmove-down)) nil)
-  ("v" split-window-right nil)
-  ("x" split-window-below nil)
-  ;("t" transpose-frame "'")
-  ;; ("u" winner-undo nil) ;;FIXME: not working?
-  ;; ("r" winner-redo nil) ;;Fixme, not working?
-  ("o" delete-other-windows nil :exit t)
-  ("s" switch-window nil :exit t)
-  ;; ("f" new-frame nil :exit t)
-  ("dw" delete-other-window nil)
-  ("db" kill-this-buffer nil)
-  ;; ("df" delete-frame nil :exit t)
- ("q" nil nil)
-  ;("i" ace-maximize-window "ace-one" :color blue)
-  ;("b" ido-switch-buffer "buf")
-  ("m" headlong-bookmark-jump nil))
+         (windmove-down)))
+  ("v" split-window-right)
+  ("x" split-window-below)
+                                        ;("t" transpose-frame "'")
+  ("u" winner-undo)
+  ("r" winner-redo) ;;Fixme, not working?
+  ("o" delete-other-windows :exit t)
+  ("a" ace-window :exit t)
+  ("f" new-frame :exit t)
+  ("s" ace-swap-window)
+  ("da" ace-delete-window)
+  ("dw" delete-window)
+  ("db" kill-this-buffer)
+  ("df" delete-frame :exit t)
+  ("q" nil)
+                                        ;("i" ace-maximize-window "ace-one" :color blue)
+                                        ;("b" ido-switch-buffer "buf")
+  ("m" headlong-bookmark-jump))
 
 (evil-leader/set-key "w" 'hydra-window/body)
 (define-key global-map (kbd "C-M-o") 'hydra-window/body)
@@ -278,7 +284,7 @@ Number of marked items: %(length (dired-get-marked-files))
   "m" 'hydra-marked-items/dired-mark)
 
 ;; define hydra for mode switching
-(defhydra hydra-mode-switch (:color amaranth
+(defhydra hydra-mode-switch (:color red
                                     :idel 1.0)
   "
 Switch mode:
@@ -286,6 +292,7 @@ Switch mode:
   ("s" flyspell-mode "flyspell")
   ("l" linum-mode "linum")
   ("L" relative-line-numbers-mode "Relative linum")
+  ("p" yas-minor-mode "Yasnippet")
   ("q" nil nil :color blue))
 (global-set-key (kbd "<f2>") 'hydra-mode-switch/body)
 

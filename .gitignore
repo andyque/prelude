@@ -25,3 +25,4 @@ tramp
 /.mc-lists.el
 /server/
 /ac-comphist.dat
+/.org-id-locations

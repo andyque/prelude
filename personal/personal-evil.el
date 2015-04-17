@@ -145,7 +145,7 @@ to replace the symbol under cursor"
 (loop for (mode . state) in
       '(
         (minibuffer-inactive-mode . emacs)
-        (Info-mode . normal)
+        (Info-mode . emacs)
         (term-mode . emacs)
         (log-edit-mode . emacs)
         (inf-ruby-mode . emacs)
@@ -184,9 +184,8 @@ to replace the symbol under cursor"
         (fundamental-mode . normal)
         (weibo-image-mode . emacs)
         (sx-question-list-mode . emacs)
-        (sx-question-mode . emacs)
-        )
-       
+        (sx-question-mode . emacs))
+
       do (evil-set-initial-state mode state))
 
 ;; (load-file "~/.emacs.d/personal/evil/mode-line-color.el")

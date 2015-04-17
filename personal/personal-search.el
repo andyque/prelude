@@ -31,4 +31,7 @@
 ;; http://conqueringthecommandline.com/book/ack_ag#chapter-ack-ag
 (define-key ag-mode-map (kbd "C-c C-e") 'wgrep-change-to-wgrep-mode)
 
+(require 'ace-link)
+(ace-link-setup-default)
+
 (provide 'personal-search)
