@@ -14,7 +14,7 @@
 
 ;;key mapping for turn on iimage mode
 (define-key evil-normal-state-map (kbd ",ii") 'turn-on-iimage-mode)
-(define-key evil-normal-state-map (kbd "s-g") 'helm-ag)
+(define-key evil-normal-state-map (kbd "s-g") 'helm-ag-project-root)
 (define-key evil-normal-state-map (kbd "s-f") 'ido-find-file)
 (define-key evil-normal-state-map (kbd "s-p") 'projectile-switch-project)
 ;;(define-key evil-normal-state-map (kbd "cc") 'evil-change-whole-line)

@@ -285,6 +285,7 @@ Switch mode:
  "
   ("s" flyspell-mode "flyspell")
   ("l" linum-mode "linum")
+  ("L" relative-line-numbers-mode "Relative linum")
   ("q" nil nil :color blue))
 (global-set-key (kbd "<f2>") 'hydra-mode-switch/body)
 

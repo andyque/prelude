@@ -2,6 +2,7 @@
 (prelude-require-packages '(org-octopress
                             org-pomodoro
                             ox-reveal
+                            worf
                             ))
 
 (add-to-list 'org-modules "org-habit")
@@ -197,6 +198,8 @@
 (setq-default mode-line-format
               (cons '(pomodoro-mode-line-string pomodoro-mode-line-string)
                     mode-line-format))
+;;config for worf ->  vi-like bindings for org-mode
+(add-hook 'org-mode-hook 'worf-mode)
 
 (provide 'prelude-org)
 
