@@ -3,7 +3,7 @@
 ;;; Code:
 
 (prelude-require-packages '(keyfreq
-                            ido-occasional
+                            ;; ido-occasional
                             helm-ls-git
                             swiper
                             ))
@@ -51,8 +51,9 @@
 ;; (define-key prelude-mode-map (kbd "s-w") 'delete-window)
 (define-key prelude-mode-map (kbd "C-:")'dired-jump)
 (define-key prelude-mode-map (kbd "C-c y") 'youdao-dictionary-search-at-point+)
-(define-key prelude-mode-map (kbd "C-h f") (with-ido-completion describe-function ))
-(define-key prelude-mode-map (kbd "C-h C-f") (with-ido-completion find-function ))
+;;don't use ido, use ivy instead
+;; (define-key prelude-mode-map (kbd "C-h f") (with-ido-completion describe-function ))
+;; (define-key prelude-mode-map (kbd "C-h C-f") (with-ido-completion find-function ))
 (define-key prelude-mode-map (kbd "C-c w") 'weibo-timeline)
 (define-key prelude-mode-map (kbd "<f1>") 'hotspots)
 (define-key prelude-mode-map (kbd "C-c h") 'hydra-apropos/body)

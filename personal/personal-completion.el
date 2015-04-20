@@ -1,3 +1,5 @@
+(prelude-require-packages '(ido-vertical-mode))
+
 (require 'company)
 
 (eval-after-load 'company
@@ -48,6 +50,18 @@
 ;; (ac-set-trigger-key "<tab>")
 
 
+(ido-vertical-mode 1)
+;;face config like abo-abo
+(setq ido-vertical-show-count t)
+(setq ido-use-faces t)
+(set-face-attribute 'ido-vertical-first-match-face nil
+                    :background "#e5b7c0")
+(set-face-attribute 'ido-vertical-only-match-face nil
+                    :background "#e52b50"
+                    :foreground "white")
+(set-face-attribute 'ido-vertical-match-face nil
+                    :foreground "#b00000")
+
 ;; http://oremacs.com/2015/04/16/ivy-mode/
 (require 'ivy)
 (ido-mode -1)
@@ -55,20 +69,6 @@
 (setq magit-completing-read-function 'ivy-completing-read)
 
 
-;; (prelude-require-packages '(ido-vertical-mode))
-;; (ido-vertical-mode t)
-
-;; ;;face config like abo-abo
-;; (setq ido-vertical-show-count t)
-;; (setq ido-use-faces t)
-;; (set-face-attribute 'ido-vertical-first-match-face nil
-;;                     :background "#e5b7c0")
-;; (set-face-attribute 'ido-vertical-only-match-face nil
-;;                     :background "#e52b50"
-;;                     :foreground "white")
-;; (set-face-attribute 'ido-vertical-match-face nil
-;;                     :foreground "#b00000")
-;; (ido-vertical-mode 1)
 
 ;; Now I use ivy instead
 
