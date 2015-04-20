@@ -134,6 +134,7 @@
 (use-package popwin)
 (popwin-mode 1)
 
+(setq prelude-clean-whitespace-on-save nil)
 ;; get ride of trailing-whitespace on some mode
 (require 'ws-butler)
 (add-hook 'c-mode-common-hook 'ws-butler-mode)
