@@ -68,7 +68,31 @@
 (ivy-mode 1)
 (setq magit-completing-read-function 'ivy-completing-read)
 
+;; http://oremacs.com/2015/04/19/git-grep-ivy/
+(defun counsel-git-grep-function (string &optional _pred &rest _u)
+  "Grep in the current git repository for STRING."
+  (split-string
+   (shell-command-to-string
+    (format
+     "git --no-pager grep --full-name -n --no-color -i -e \"%s\""
+     string))
+   "\n"
+   t))
 
+(defun counsel-git-grep ()
+  "Grep for a string in the current git repository."
+  (interactive)
+  (let ((default-directory (locate-dominating-file
+                            default-directory ".git"))
+        (val (ivy-read "pattern: " 'counsel-git-grep-function))
+        lst)
+    (when val
+      (setq lst (split-string val ":"))
+      (find-file (car lst))
+      (goto-char (point-min))
+      (forward-line (1- (string-to-number (cadr lst)))))))
+
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
 
 ;; Now I use ivy instead
 
