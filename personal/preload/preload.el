@@ -19,9 +19,6 @@
 (setq *emacs24* (and (not *xemacs*) (or (>= emacs-major-version 24))) )
 (setq initial-scratch-message nil)
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
 (if *is-a-mac*
     (setq ns-pop-up-frames nil)

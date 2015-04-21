@@ -64,7 +64,6 @@
 
 ;; http://oremacs.com/2015/04/16/ivy-mode/
 (require 'ivy)
-(ido-mode -1)
 (ivy-mode 1)
 (setq magit-completing-read-function 'ivy-completing-read)
 

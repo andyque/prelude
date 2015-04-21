@@ -123,5 +123,9 @@ when toggle off input method, switch to evil-normal-state if current state is ev
            (let ((mark-even-if-inactive transient-mark-mode))
              (indent-region (region-beginning) (region-end) nil))))))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+
 (provide 'prelude-misc)
 ;;; prelude-misc.el ends here
