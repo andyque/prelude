@@ -64,7 +64,7 @@
 
 ;; http://oremacs.com/2015/04/16/ivy-mode/
 (require 'ivy)
-(ivy-mode 1)
+;; (ivy-mode -1)
 (setq magit-completing-read-function 'ivy-completing-read)
 
 ;; http://oremacs.com/2015/04/19/git-grep-ivy/

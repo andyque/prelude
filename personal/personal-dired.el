@@ -27,6 +27,7 @@
 
 (setq dired-guess-shell-alist-user
       '(("\\.pdf\\'" "open")
+        ("\\.docx\\'" "open")
         ("\\.\\(?:djvu\\|eps\\)\\'" "open")
         ("\\.\\(?:jpg\\|jpeg\\|png\\|gif\\|xpm\\)\\'" "open")
         ("\\.\\(?:xcf\\)\\'" "open")
