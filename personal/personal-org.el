@@ -1,13 +1,19 @@
+;;; personal-org.el --- my own org configs
+
+;;; Commentary:
+;; 
+
 ;;; Code:
 (prelude-require-packages '(org-octopress
                             org-pomodoro
                             ox-reveal
                             worf
+                            org-download
                             ))
 
 (add-to-list 'org-modules "org-habit")
 (require 'org-mac-link)
-
+(org-download-enable)
 (setq org-agenda-inhibit-startup t) ;; ~50x speedup
 (setq org-agenda-use-tag-inheritance nil) ;; 3-4x speedup
 (setq org-agenda-window-setup 'current-window)
@@ -204,3 +210,6 @@
 (provide 'prelude-org)
 
 ;;; prelude-org.el ends here
+
+(provide 'personal-org)
+;;; personal-org.el ends here
