@@ -58,5 +58,7 @@
 (define-key prelude-mode-map (kbd "<f1>") 'hotspots)
 (define-key prelude-mode-map (kbd "C-c h") 'hydra-apropos/body)
 (define-key prelude-mode-map (kbd "C-c l") 'zilongshanren/insert-chrome-current-tab-url)
+(define-key prelude-mode-map (kbd "M-s") 'er/expand-region)
+(define-key prelude-mode-map (kbd "M-w") 'er/contract-region)
 
 (provide 'personal-global-keybinding)
