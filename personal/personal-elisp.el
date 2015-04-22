@@ -1,11 +1,10 @@
-(prelude-require-packages '(macrostep
-                            aggressive-indent
-                            lispy
-                            ))
+(prelude-require-packages '(aggressive-indent
+                            lispy))
 
-(require 'macrostep)
-(define-key prelude-mode-map (kbd "C-c e") nil)
-(define-key emacs-lisp-mode-map (kbd "C-c e") 'macrostep-expand)
+;; it will conflicts with lispy
+;; (require 'macrostep)
+;; (define-key prelude-mode-map (kbd "C-c e") nil)
+;; (define-key emacs-lisp-mode-map (kbd "C-c e") 'macrostep-expand)
 
 ;; for aggressive-indent
 (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
