@@ -113,6 +113,15 @@
 ;; async dired command
 ;; (when (require 'dired-aux)
 ;;   (require 'dired-async))
-(define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-alternate-file)
+(define-key dired-mode-map (kbd "<mouse-2>") 'my-dired-find-file)
+
+;;dired find alternate file in other buffer
+(defun my-dired-find-file ()
+  "Open buffer in another window"
+  (interactive)
+  (let ((filename (dired-get-filename nil t)))
+    (if (car (file-attributes filename))
+        (dired-find-alternate-file)
+      (dired-find-file-other-window))))
 (provide 'personal-dired)
 ;;; personal-dired.el ends here
