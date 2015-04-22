@@ -28,7 +28,7 @@
 (require 'powerline)
 (powerline-evil-center-color-theme)
 
-(custom-theme-set-faces 'zenburn
+(custom-theme-set-faces 'monokai
                         `(region ((t :background "#A9F5F2"))))
 ;;display time in mode line
 (defface egoge-display-time
