@@ -90,8 +90,7 @@
   (start-process "grip" "*gfm-to-html*" "grip" (buffer-file-name)
 
                  )
-  (browse-url (format  "http://localhost:5000/%s" (buffer-name))))
-
+  (browse-url (format  "http://localhost:5000/%s.md" (file-name-base))))
 (define-key gfm-mode-map (kbd "s-h") 'zilongshanren/markdown-to-html)
 
 
