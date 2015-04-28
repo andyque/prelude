@@ -12,6 +12,9 @@
      (setq company-begin-commands '(self-insert-command))
      (setq company-tooltip-limit 10)
      (setq company-minimum-prefix-length 1)
+     (setq  company-dabbrev-ignore-case nil)
+     (setq  company-dabbrev-downcase nil)
+     (setq company-require-match nil)
      ;; key bindings
      (define-key company-active-map (kbd "C-j") 'company-select-next)
      (define-key company-active-map (kbd "C-k") 'company-select-previous)
