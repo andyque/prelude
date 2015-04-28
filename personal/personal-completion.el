@@ -6,12 +6,18 @@
   '(progn
      (setq company-echo-delay 0)
      (setq company-idle-delay 0.08)
+     (setq  company-tooltip-flip-when-above t)
      (setq company-auto-complete nil)
      (setq company-show-numbers t)
      (setq company-begin-commands '(self-insert-command))
      (setq company-tooltip-limit 10)
      (setq company-minimum-prefix-length 1)
-     ))
+     ;; key bindings
+     (define-key company-active-map (kbd "C-j") 'company-select-next)
+     (define-key company-active-map (kbd "C-k") 'company-select-previous)
+     (define-key company-active-map (kbd "C-/") 'company-search-candidates)))
+     
+     
 
 
 ;; configs for auto complete mode

@@ -10,10 +10,7 @@
 ;; config emacs theme
 ;; salorized color theme would make org-mode very slow
 ;; (require 'zenburn-theme)
-(if window-system
-    (load-theme 'monokai t)
-  (load-theme 'wombat t)
-)
+(load-theme 'monokai t)
 
 ;;show git branch name in mode line
 (defadvice vc-git-mode-line-string (after plus-minus (file) compile activate)
@@ -30,6 +27,7 @@
 
 (custom-theme-set-faces 'monokai
                         `(region ((t :background "#A9F5F2"))))
+
 ;;display time in mode line
 (defface egoge-display-time
   '((((type x w32 mac))

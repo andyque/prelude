@@ -2,6 +2,7 @@
 ;; @see http://stackoverflow.com/questions/5748814/how-does-one-disable-vc-git-in-emacs
 (prelude-require-packages '(git-gutter
                             git-messenger
+                            git-gutter-fringe
                             ))
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -146,5 +147,10 @@ If `F.~REV~' already exists, use it instead of checking it out again."
 
 (require 'magit)
 (define-key magit-log-mode-map (kbd "W") 'magit-copy-item-as-kill)
+
+(require  'git-gutter-fringe)
+(global-git-gutter-mode t)
+(setq git-gutter-fr:side 'right-fringe)
+
 ;; }}
 (provide 'prelude-git)
